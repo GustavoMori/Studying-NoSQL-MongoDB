@@ -1,0 +1,21 @@
+db."tabela".findOne(FILTRO)
+exemplo:
+db.estados.findOne({sigla: "RJ"})
+ps: só acha um
+
+tipos de filtros
+
+OU
+db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()
+E 
+db.estados.find({$and: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()
+
+CONSULTAS SE EXISTE TAL ATRIBUTO
+db.estados.find({populacao: {$exists:true}})
+
+consultas paginadas (COM LIMITES)
+db.estados.find().skip(1) --ele pula o primeiro
+db.estados.find().limit(2) -- limita qnts aparecem
+db.estados.count() -- saber qnts registros tem dentro dessa coleção
+db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1}) -- esse 1 representa que há dado no buscado.
+db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0}) -- para trazer apenas um atributo desejado
