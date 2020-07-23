@@ -1,0 +1,14 @@
+db.'nome da collection'.insert(JSON)
+exemplo:
+db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"})
+ps: ele já cria a collection qnd vc manda fazer um insert em uma collection q quer existe ainda.
+.save({JSON}) também faz a mesma coisa que o insert
+e é possivel inserir dados ou faltar dados em algumas colunas pois ele é sem schema
+e ele gera a coluna adicional qnd um dado com mais chaves sao criadas.
+
+
+encadeamento de chamada
+exemplo:
+db.estados.find().pretty()
+ps1: find() busca os dados e expoem-os na tela.
+ps2: pretty() formata os dados expostos na tela.
