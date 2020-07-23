@@ -1,0 +1,14 @@
+mongo para inicializar
+
+show dbs -- mostra os bancos de dados
+
+use "nome do banco" --- ele ja troca o banco de dados
+
+db.createCollection('estados') -- cria uma collection com nome de estados
+-- e acaba criando o db que anteriormente nao tinha nada dentro dele.
+-- ter cuidado que ele é CaseSensitive
+
+show collections -- mostra as collections existentes
+
+db.'nome da collection'.drop() -- vai deletar a collection
+-- se excluir todas collections do db, ele automaticamente se excluira
